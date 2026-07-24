@@ -6,17 +6,91 @@
     <title>Quiz Gostay</title>
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/index.css">
+    <script src="/assets/js/index.js" defer></script>
 </head>
 <body>
     <nav>
         <div class="container">
             <div class="logo">
                 <img src="" alt="logo"> 
-            </div>
+            </div> 
         </div>
     </nav>
-    <section>
-        <h1>olá</h1>
+    <section class="home">
+        <div class="container">
+    
+            
+            <div class="hero">
+                <h1>
+                    Bem-vindo ao Contox 2026!
+                </h1>
+                
+                <span class="evento">by Gostay </span>
+    
+                <p class="descricao">
+                    Você está prestes a participar de um desafio rápido e divertido.
+                    Responda ao questionário, teste seus conhecimentos sobre a plataforma
+                    e descubra sua pontuação ao final.
+                </p>
+    
+                <div class="card-info">
+                    <h2>🎯 Desafio rápido</h2>
+    
+                    <p>
+                        O quiz possui poucas perguntas e leva menos de 2 minutos para ser concluído.
+                    </p>
+    
+                    <ul>
+                        <li>✔ Teste seus conhecimentos</li>
+                        <li>✔ Descubra sua pontuação</li>
+                        <li>✔ Conheça ainda mais sobre o Gostay</li>
+                    </ul>
+                </div>
+    
+                <form id="cadastroForm" class="cadastro-form">
+    
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                        >
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(00) 00000-0000"
+                            required
+                        >
+                    </div>
+    
+                    <button type="submit">
+                        Começar o Quiz
+                    </button>
+    
+                </form>
+    
+            </div>
+    
+        </div>
     </section>
 </body>
 </html>
