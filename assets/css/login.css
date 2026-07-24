@@ -1,0 +1,180 @@
+/* body{
+    background-color: rgb(0, 22, 41);
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgb(0, 22, 41);
+    padding: 1.5rem 9%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.home{
+    margin-top: 22%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    min-height: 70vh;
+    display: flex;
+    background-color: white;
+    
+}
+
+input{
+    margin-bottom: 20px;
+}
+
+form.cadastroForm {
+    display: table;
+  }
+  
+  div.cadastroForm {
+    display: table-row;
+  }
+
+label {
+    padding-right: 10px;
+  } */
+
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(0, 22, 41);
+    color: white;
+}
+
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgb(0, 22, 41);
+    padding: 1.5rem 9%;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.container {
+    width: 100%;
+}
+
+
+/* Área principal */
+.home {
+    margin-top: 120px;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 70vh;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+}
+
+
+/* Conteúdo */
+.content {
+    width: 100%;
+    max-width: 500px;
+}
+
+
+/* Formulário */
+.nome {
+    width: 100%;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    color: rgb(0, 22, 41);
+}
+
+
+/* Campos */
+.formNome,
+.formEmail,
+.formTelefone {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(0, 22, 41);
+}
+
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+
+    border-radius: 8px;
+    border: 1px solid #ccc;
+
+    font-size: 1rem;
+
+    color: rgb(0,22,41);
+    background-color: white;
+}
+
+
+input:focus {
+    outline: none;
+    border-color: rgb(0,22,41);
+}
+
+
+/* Botão */
+button {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: rgb(0,22,41);
+    color: white;
+
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+button:hover {
+    opacity: 0.9;
+}
+
+h1{
+    color: black
+}

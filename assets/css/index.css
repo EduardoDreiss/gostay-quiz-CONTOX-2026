@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(0, 22, 41);
+    color: white;
+}
+
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgb(0, 22, 41);
+    padding: 1.5rem 9%;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.container {
+    width: 100%;
+}
+
+
+/* Área principal */
+.home {
+    margin-top: 120px;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 70vh;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+}
+
+
+/* Conteúdo */
+.content {
+    width: 100%;
+    max-width: 500px;
+}
+
+
