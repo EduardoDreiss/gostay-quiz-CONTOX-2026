@@ -23,7 +23,7 @@ export async function criarUsuario(usuario) {
 export async function buscarUsuariopPorID(id) {
 
     const {data, error} = await supabase
-        .from("usuarios")
+        .from("participantes")
         .select("*")
         .eq("id", id)
         .single();
