@@ -55,6 +55,8 @@ async function handleSubmit(event) {
         
         const usuarioCriado = await criarUsuario
 
+        console.log(usuarioCriado);
+        
         sessionStorage.setItem(
             "usuario",
             JSON.stringify(usuarioCriado)
