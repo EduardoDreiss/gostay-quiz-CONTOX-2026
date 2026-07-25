@@ -230,6 +230,12 @@ button:hover{
     transform: translateY(-2px);
 }
 
+.logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
 /* ================= TABLET ================= */
 
 @media (min-width:768px){
