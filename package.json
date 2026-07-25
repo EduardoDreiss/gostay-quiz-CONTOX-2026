@@ -1,0 +1,23 @@
+{
+  "name": "quizgostay",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardoDreiss/gostay-quiz-CONTOX-2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EduardoDreiss/gostay-quiz-CONTOX-2026/issues"
+  },
+  "homepage": "https://github.com/EduardoDreiss/gostay-quiz-CONTOX-2026#readme",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.110.8"
+  }
+}
