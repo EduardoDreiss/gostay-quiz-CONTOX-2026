@@ -10,6 +10,13 @@ body {
     color: white;
 }
 
+footer{
+    background-color: #333;
+    
+    text-align: center;
+    align-items: center;
+}
+
 /* ================= NAVBAR ================= */
 
 nav {

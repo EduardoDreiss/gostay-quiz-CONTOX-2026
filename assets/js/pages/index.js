@@ -1,5 +1,7 @@
 console.log('js carregado');
 
+import  { criarUsuario } from "../services/usuarioService";
+ 
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("DOM carregado");
@@ -50,9 +52,12 @@ async function handleSubmit(event) {
     console.log("Usuário: ", usuario)
 
     try {
+        
+        const usuarioCriado = await criarUsuario
+
         sessionStorage.setItem(
             "usuario",
-            JSON.stringify(usuario)
+            JSON.stringify(usuarioCriado)
         );
 
         window.location.href = "quiz.html";
