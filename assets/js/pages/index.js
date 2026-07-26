@@ -63,7 +63,7 @@ async function handleSubmit(event) {
             JSON.stringify(usuarioCriado)
         );
 
-        // window.location.href = "quiz.html";
+        window.location.href = "quiz.html";
 
     } catch (erro) {
         // console.error("Erro completo:", erro);
