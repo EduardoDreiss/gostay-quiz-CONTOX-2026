@@ -1,6 +1,7 @@
+import  { criarUsuario } from "../services/usuarioService.js";
+
 console.log('js carregado');
 
-import  { criarUsuario } from "../services/usuarioService";
  
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -46,29 +47,38 @@ async function handleSubmit(event) {
         nome,
         email,
         telefone,
-        dataCadastro : new Date().toISOString().slice(0, 16)
+        // dataCadastro : new Date().toISOString().slice(0, 16)
     };
 
     console.log("Usuário: ", usuario)
 
     try {
         
-        const usuarioCriado = await criarUsuario
+        const usuarioCriado = await criarUsuario(usuario)
 
         console.log(usuarioCriado);
-        
+
         sessionStorage.setItem(
             "usuario",
             JSON.stringify(usuarioCriado)
         );
 
-        window.location.href = "quiz.html";
+        // window.location.href = "quiz.html";
 
-    } catch(erro) {
+    } catch (erro) {
+        // console.error("Erro completo:", erro);
+    
+        // if (erro.message) {
+        //     console.error("Mensagem:", erro.message);
+        // }    
 
-        console.error('erro ao cadastrar usuario', erro);
-
-        alert('não foi possivel continuar, faça o login novamente.')
+        console.error("Erro completo:", erro);
+        console.error("Código:", erro.code);
+        console.error("Mensagem:", erro.message);
+        console.error("Detalhes:", erro.details);
+        console.error("Hint:", erro.hint);
+    
+        alert("Erro ao cadastrar participante.");
     }
 
 
