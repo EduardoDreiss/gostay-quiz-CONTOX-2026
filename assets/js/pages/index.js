@@ -1,4 +1,6 @@
 import  { criarUsuario } from "../services/usuarioService.js";
+import { salvarUsuario } from "../services/authService.js";
+
 
 console.log('js carregado');
 
@@ -58,10 +60,7 @@ async function handleSubmit(event) {
 
         console.log(usuarioCriado);
 
-        sessionStorage.setItem(
-            "usuario",
-            JSON.stringify(usuarioCriado)
-        );
+        salvarUsuario(usuarioCriado);
 
         window.location.href = "instruçõesQuiz.html";
 
