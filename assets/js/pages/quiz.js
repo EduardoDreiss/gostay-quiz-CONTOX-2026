@@ -1,3 +1,7 @@
+import { protegerQuiz } from "../guards/protegerQuiz.js";
+
+protegerQuiz();
+
 console.log("JS carregado");
 
 import { perguntas } from "../../data/questions.js";
