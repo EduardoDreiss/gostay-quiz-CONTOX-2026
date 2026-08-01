@@ -95,75 +95,6 @@ function responder(evento) {
 
 }
 
-// async function finalizarQuiz() {
-
-//     const fimQuiz = Date.now();
-
-//     const tempoTotal = Math.floor(
-//         (fimQuiz - inicioQuiz) / 1000
-//     );
-
-    
-//     console.log(participante);
-
-
-//     const resultado = {
-
-//         totalQuestoes: perguntas.length,
-
-//         acertos,
-
-//         erros: perguntas.length - acertos,
-
-//         tempo: tempoTotal,
-
-//         respostas
-
-//     };
-
-//     console.log("Resultado:", resultado);
-
-//     sessionStorage.setItem(
-//         "resultadoQuiz",
-//         JSON.stringify(resultado)
-//     );
-
-//     try {
-
-//         const participante = JSON.parse(
-//             sessionStorage.getItem("usuario")
-//         );
-
-//         console.log("Participante:", participante);
-//         console.log("Resultado:", resultado);
-
-        
-
-//         const participanteAtualizado = await atualizarPontuacao(participante.id, resultado);
-
-//         console.log("Participante atualizado:", participanteAtualizado);
-
-//         sessionStorage.setItem(
-//             "usuario",
-//             JSON.stringify(participanteAtualizado)
-//         );
-
-//         // window.location.href = "resultado.html";
-
-//     } catch (erro) {
-
-//         console.error("Erro completo:", erro);
-//         console.error("Código:", erro.code);
-//         console.error("Mensagem:", erro.message);
-//         console.error("Detalhes:", erro.details);
-//         console.error("Hint:", erro.hint);
-
-//         alert("Erro ao salvar a pontuação.");
-
-//     }
-
-// }
-
 async function finalizarQuiz() {
     const fimQuiz = Date.now();
 
@@ -208,7 +139,6 @@ async function finalizarQuiz() {
             "usuario",
             JSON.stringify(participanteAtualizado)
         );
-
         // Descomente quando quiser redirecionar
         window.location.href = "resultado.html";
 
