@@ -286,7 +286,7 @@ button:active{
 @media (min-width: 768px){
 
     .home{
-        margin: 110px auto 50px;
+        margin: 40px auto 50px;
     }
 
     .hero{
@@ -304,5 +304,78 @@ button:active{
         width: 84px;
         height: 84px;
         font-size: .78rem;
+    }
+}
+
+/* ================= INSTRUÇÕES ================= */
+
+.titulo-pagina{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    letter-spacing: -.3px;
+    margin-bottom: 22px;
+}
+
+.alerta-pontos{
+    position: relative;
+    background: linear-gradient(135deg, var(--yellow-400), var(--yellow-500));
+    color: var(--navy-950);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    overflow: hidden;
+}
+
+.alerta-pontos::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120px 80px at 100% 0%, rgba(255,255,255,.35), transparent 70%);
+    pointer-events: none;
+}
+
+.alerta-badge{
+    display: inline-block;
+    background: var(--navy-950);
+    color: var(--yellow-400);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+.alerta-pontos h2{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.alerta-pontos p{
+    font-size: .92rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.alerta-pontos strong{
+    text-decoration: underline;
+    text-decoration-color: var(--navy-950);
+    text-underline-offset: 3px;
+}
+
+.cta-link{
+    text-decoration: none;
+    display: block;
+}
+
+@media (min-width: 768px){
+    .titulo-pagina{
+        font-size: 2.2rem;
     }
 }

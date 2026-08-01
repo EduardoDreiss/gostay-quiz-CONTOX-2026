@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+    --navy-950: #001629;
+    --navy-900: #012A4A;
+    --navy-800: #023E63;
+    --blue-500: #1C7ED6;
+    --blue-400: #4DA3F0;
+    --yellow-400: #FFCB3D;
+    --yellow-500: #F5B700;
+    --ink: #0B1E2E;
+    --muted: #5B6B7A;
+    --paper: #FFFFFF;
+    --panel: #EFF5FB;
+    --radius-lg: 26px;
+    --radius-md: 14px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    color: var(--paper);
+    background:
+        radial-gradient(600px 400px at 12% -5%, rgba(255, 203, 61, .18), transparent 60%),
+        radial-gradient(700px 500px at 110% 15%, rgba(28, 126, 214, .35), transparent 60%),
+        linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
+    min-height: 100vh;
+}
+
+footer{
+    background: var(--navy-950);
+    border-top: 1px solid rgba(255, 203, 61, .15);
+    text-align: center;
+    padding: 18px;
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+}
+
+/* ================= LOGO / LAYOUT ================= */
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.logo img{
+    height: 300px;
+    width: 200px;
+    object-fit: contain;
+}
+
+.home{
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-pagina{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    letter-spacing: -.3px;
+    margin-bottom: 22px;
+}
+
+.quiz{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================= QUIZ CARD ================= */
+/* Injected by quiz.js on every question */
+
+.quiz-card{
+    position: relative;
+    width: 100%;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    border-radius: var(--radius-lg);
+
+    padding: 30px 24px 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    box-shadow: 0 24px 60px rgba(0, 12, 24, .45), 0 0 0 1px rgba(255,255,255,.04);
+
+    animation: rise .45s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes rise{
+    from{ opacity: 0; transform: translateY(14px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+.contador{
+    display: inline-block;
+    width: fit-content;
+
+    background: linear-gradient(135deg, var(--navy-950), var(--blue-500));
+    color: #fff;
+
+    padding: 7px 16px;
+    border-radius: 30px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.pergunta{
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--navy-950);
+    font-size: 1.25rem;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -.3px;
+}
+
+/* ================= ALTERNATIVAS ================= */
+
+.alternativas{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+button.alternativa{
+    width: 100%;
+    text-align: left;
+
+    padding: 15px 18px;
+
+    border: 1.5px solid #E2E8EF;
+    background: #FAFCFE;
+    border-radius: var(--radius-md);
+
+    color: var(--ink);
+    font-size: .95rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+button.alternativa:hover{
+    border-color: var(--blue-500);
+    background: var(--panel);
+    transform: translateX(2px);
+}
+
+button.alternativa:focus-visible{
+    outline: none;
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 4px rgba(28, 126, 214, .14);
+}
+
+button.alternativa:active{
+    background: linear-gradient(135deg, var(--yellow-400), var(--yellow-500));
+    border-color: var(--yellow-500);
+    color: var(--navy-950);
+    font-weight: 700;
+    transform: translateX(0);
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width: 768px){
+
+    .home{
+        margin: 40px auto 50px;
+    }
+
+    .titulo-pagina{
+        font-size: 2.2rem;
+    }
+
+    .quiz-card{
+        max-width: 620px;
+        padding: 44px 44px 40px;
+    }
+
+    .pergunta{
+        font-size: 1.5rem;
+    }
+}
