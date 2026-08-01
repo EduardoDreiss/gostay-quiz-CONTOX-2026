@@ -3,9 +3,6 @@
 
 // protegerResultado();
 
-
-console.log("resultado.html");
-
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("resultado.html");
