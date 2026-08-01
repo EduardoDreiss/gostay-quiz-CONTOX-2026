@@ -23,3 +23,9 @@ console.log(error);
 
     return data;
 }
+
+// export async function buscarUsuario(id) {
+//     console.log("buscando usuario pelo id", id);
+//     const {data, error} = await supabase
+//     .from("participantes")
+// }

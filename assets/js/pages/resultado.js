@@ -1,6 +1,35 @@
 //
-import { protegerResultado } from "../guards/protegerResultado.js";
+// import { protegerResultado } from "../guards/protegerResultado.js";
 
-protegerResultado();
+// protegerResultado();
+
 
 console.log("resultado.html");
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    console.log("resultado.html");
+
+    const participanteAtual = JSON.parse(
+        sessionStorage.getItem("usuario")
+    );
+
+    console.log(participanteAtual);
+
+    if (!participanteAtual) {
+        window.location.href = "index.html";
+        return;
+    }
+
+    const container =
+        document.getElementById("tituloResultado");
+
+    container.innerHTML = `
+        <h1>Olá ${participanteAtual.nome}!</h1>
+        <p> sua pontuação final foi de ${participanteAtual.acertos} acertos em ${participanteAtual.tempo_total} segundos !!</p>
+
+        <h2>caso queira comparar suas respostas, clique aqui</h2>
+        <button> 
+    `;
+
+});

@@ -1,17 +1,29 @@
+// kys
 import { protegerQuiz } from "../guards/protegerQuiz.js";
+import { perguntas as todasAsPerguntas } from "../../data/questions.js";
+import { atualizarPontuacao } from "../services/pontuacaoService.js";
 
 protegerQuiz();
 
 console.log("JS carregado");
 
-import { perguntas } from "../../data/questions.js";
-import { atualizarPontuacao } from "../services/pontuacaoService.js";
+// Função para embaralhar e selecionar 10 perguntas aleatórias
+function sortearPerguntas(lista, quantidade = 10) {
+    const copia = [...lista];
+    for (let i = copia.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
+    return copia.slice(0, quantidade);
+}
+
+// Sorteia 10 perguntas do total de 50
+const perguntas = sortearPerguntas(todasAsPerguntas, 10);
 
 let indiceAtual = 0;
 let acertos = 0;
 
 const respostas = [];
-
 const inicioQuiz = Date.now();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,15 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function mostrarPergunta() {
-
     const pergunta = perguntas[indiceAtual];
-
     const container = document.getElementById("quizContainer");
 
     container.innerHTML = `
-
         <div class="quiz-card">
-
             <span class="contador">
                 Pergunta ${indiceAtual + 1} de ${perguntas.length}
             </span>
@@ -37,34 +45,26 @@ function mostrarPergunta() {
             </h2>
 
             <div class="alternativas">
-
                 ${pergunta.alternativas
                     .map((alternativa, index) => `
-
                         <button
                             class="alternativa"
                             data-index="${index}"
                         >
                             ${alternativa}
                         </button>
-
                     `)
                     .join("")}
-
             </div>
-
         </div>
-
     `;
 
     document.querySelectorAll(".alternativa").forEach(botao => {
         botao.addEventListener("click", responder);
     });
-
 }
 
 function responder(evento) {
-
     const respostaEscolhida = Number(
         evento.target.dataset.index
     );
@@ -84,15 +84,10 @@ function responder(evento) {
     indiceAtual++;
 
     if (indiceAtual < perguntas.length) {
-
         mostrarPergunta();
-
     } else {
-
         finalizarQuiz();
-
     }
-
 }
 
 async function finalizarQuiz() {
@@ -139,7 +134,8 @@ async function finalizarQuiz() {
             "usuario",
             JSON.stringify(participanteAtualizado)
         );
-        // Descomente quando quiser redirecionar
+
+        // Redireciona para a tela final
         window.location.href = "resultado.html";
 
     } catch (erro) {
