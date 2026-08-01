@@ -5,35 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Gostay</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/resultado.css">
     <script 
         type="module"
         src="/assets/js/pages/resultado.js">
     </script>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="logo">
-                <img src="/assets/images/logo.png" alt="logo"> 
-            </div>
-            <div class="ranking">
-                <!-- aqui será um dos links para o ranking global ao lado do logo-->
-            </div>
-        </div>
-    </nav>
     <section class="home">
         <div class="container">
-            <div class="hero">
-                <h1 id="tituloResultado">
-                </h1>
-                <a href="correcoes.html">correcoes</a>
-            </div>
-        </div>
 
-        <div class="redirecionamento">
-            clique aqui para conhecer nossa plataforma
+            <a href="/ranking.html" class="ranking-link">
+                🏆 Ver ranking geral
+            </a>
+
+            <div class="hero">
+                <div id="tituloResultado"></div>
+
+                <a href="correcoes.html">Ver correções</a>
+            </div>
+
+            <a href="landingPageFinal.html" class="cta-plataforma">
+                <span class="cta-plataforma__eyebrow">✨ depois do quiz</span>
+                <h2 class="cta-plataforma__titulo">Conheça a Gostay</h2>
+                <p class="cta-plataforma__texto">
+                    Veja como estamos transformando a rotina de clínicas de estética e odontologia.
+                </p>
+                <span class="cta-plataforma__seta">Explorar a plataforma →</span>
+            </a>
+
         </div>
-        <a href="landingPageFinal.html">aqui</a>
     </section>
+    <footer>
+        <p>by Gostay - 2026</p>
+    </footer>
 </body>
+</html>

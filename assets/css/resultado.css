@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+    --navy-950: #001629;
+    --navy-900: #012A4A;
+    --navy-800: #023E63;
+    --blue-500: #1C7ED6;
+    --blue-400: #4DA3F0;
+    --yellow-400: #FFCB3D;
+    --yellow-500: #F5B700;
+    --ink: #0B1E2E;
+    --muted: #5B6B7A;
+    --paper: #FFFFFF;
+    --panel: #EFF5FB;
+    --radius-lg: 26px;
+    --radius-md: 14px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    color: var(--paper);
+    background:
+        radial-gradient(600px 400px at 12% -5%, rgba(255, 203, 61, .18), transparent 60%),
+        radial-gradient(700px 500px at 110% 15%, rgba(28, 126, 214, .35), transparent 60%),
+        linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
+    min-height: 100vh;
+}
+
+footer{
+    background: var(--navy-950);
+    border-top: 1px solid rgba(255, 203, 61, .15);
+    text-align: center;
+    padding: 18px;
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+}
+
+/* ================= LAYOUT ================= */
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home{
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================= RANKING LINK ================= */
+/* Only nav element this page needs — no logo/hero image here */
+
+.ranking-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+
+    text-decoration: none;
+
+    background: linear-gradient(135deg, var(--navy-950), var(--blue-500));
+    color: #fff;
+
+    padding: 9px 20px;
+    border-radius: 30px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .6px;
+
+    margin-bottom: 22px;
+
+    transition: .2s ease;
+    box-shadow: 0 8px 20px rgba(0, 12, 24, .3);
+}
+
+.ranking-link:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(0, 12, 24, .4);
+}
+
+/* ================= HERO / RESULTADO ================= */
+
+.hero{
+    position: relative;
+    width: 100%;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    border-radius: var(--radius-lg);
+
+    padding: 34px 26px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 24px 60px rgba(0, 12, 24, .45), 0 0 0 1px rgba(255,255,255,.04);
+
+    animation: rise .5s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes rise{
+    from{ opacity: 0; transform: translateY(16px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+#tituloResultado h1{
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--navy-950);
+    font-size: 1.7rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -.4px;
+    margin-bottom: 12px;
+}
+
+#tituloResultado p{
+    color: var(--muted);
+    line-height: 1.65;
+    font-size: 1rem;
+}
+
+#tituloResultado p strong{
+    color: var(--navy-950);
+    font-weight: 700;
+}
+
+#tituloResultado h2{
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--blue-500);
+    font-size: .95rem;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.hero > a{
+    align-self: center;
+    text-decoration: none;
+
+    color: var(--navy-950);
+    background: var(--panel);
+    border: 1.5px solid #D9E6F2;
+
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+
+    transition: .2s ease;
+}
+
+.hero > a:hover{
+    border-color: var(--blue-500);
+    background: #fff;
+    transform: translateY(-1px);
+}
+
+/* ================= CTA FINAL — PLATAFORMA ================= */
+
+.cta-plataforma{
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 38px;
+    padding: 32px 28px;
+
+    border-radius: 22px;
+    text-decoration: none;
+
+    background: linear-gradient(135deg, var(--yellow-400) 0%, var(--yellow-500) 45%, var(--blue-500) 100%);
+    color: var(--navy-950);
+
+    box-shadow: 0 20px 46px rgba(245, 183, 0, .3), 0 0 0 1px rgba(255,255,255,.18);
+
+    animation: pulseGlow 3.2s ease-in-out infinite;
+    transition: transform .3s ease;
+}
+
+.cta-plataforma::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(255,255,255,.55), transparent);
+    transform: skewX(-18deg);
+    transition: left .7s ease;
+    pointer-events: none;
+}
+
+.cta-plataforma:hover{
+    transform: translateY(-4px) scale(1.015);
+}
+
+.cta-plataforma:hover::after{
+    left: 130%;
+}
+
+.cta-plataforma:focus-visible{
+    outline: 3px solid var(--navy-950);
+    outline-offset: 3px;
+}
+
+@keyframes pulseGlow{
+    0%, 100%{ box-shadow: 0 20px 46px rgba(245, 183, 0, .3), 0 0 0 1px rgba(255,255,255,.18); }
+    50%{ box-shadow: 0 24px 56px rgba(28, 126, 214, .4), 0 0 0 1px rgba(255,255,255,.28); }
+}
+
+.cta-plataforma__eyebrow{
+    display: inline-block;
+    width: fit-content;
+
+    background: rgba(0, 22, 41, .14);
+    color: var(--navy-950);
+
+    padding: 5px 13px;
+    border-radius: 30px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+
+    margin-bottom: 4px;
+}
+
+.cta-plataforma__titulo{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: -.4px;
+    line-height: 1.15;
+}
+
+.cta-plataforma__texto{
+    font-size: .95rem;
+    line-height: 1.55;
+    color: rgba(0, 22, 41, .78);
+    font-weight: 500;
+    max-width: 46ch;
+}
+
+.cta-plataforma__seta{
+    margin-top: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap .25s ease;
+}
+
+.cta-plataforma:hover .cta-plataforma__seta{
+    gap: 10px;
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width: 768px){
+
+    .home{
+        margin: 60px auto 50px;
+    }
+
+    .hero{
+        max-width: 560px;
+        padding: 46px 46px 40px;
+    }
+
+    .cta-plataforma{
+        max-width: 560px;
+        padding: 40px 44px;
+    }
+
+    .cta-plataforma__titulo{
+        font-size: 1.9rem;
+    }
+
+    #tituloResultado h1{
+        font-size: 2.2rem;
+    }
+}
