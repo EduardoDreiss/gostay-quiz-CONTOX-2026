@@ -119,7 +119,7 @@ function validarFormulario(nome, email, telefone){
         return false;
     }
     
-    if (telefone.length < 10 || telefone.length > 13){
+    if (telefone.length < 8 || telefone.length > 13){
         alert('informe um telefone válido');
         return false;
     }
