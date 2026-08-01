@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <p> sua pontuação final foi de ${participanteAtual.acertos} acertos em ${participanteAtual.tempo_total} segundos !!</p>
 
         <h2>caso queira comparar suas respostas, clique aqui</h2>
-        <button> 
     `;
 
 });

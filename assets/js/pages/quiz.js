@@ -71,10 +71,27 @@ function responder(evento) {
 
     const perguntaAtual = perguntas[indiceAtual];
 
+    // respostas.push({
+    //     pergunta: perguntaAtual.id,
+    //     resposta: respostaEscolhida,
+    //     correta: perguntaAtual.correta
+    // });
+
     respostas.push({
-        pergunta: perguntaAtual.id,
-        resposta: respostaEscolhida,
-        correta: perguntaAtual.correta
+
+        id: perguntaAtual.id,
+    
+        pergunta: perguntaAtual.pergunta,
+    
+        alternativas: perguntaAtual.alternativas,
+    
+        respostaUsuario: respostaEscolhida,
+    
+        respostaCorreta: perguntaAtual.correta,
+    
+        acertou:
+            respostaEscolhida === perguntaAtual.correta
+    
     });
 
     if (respostaEscolhida === perguntaAtual.correta) {
