@@ -547,5 +547,556 @@ export const perguntas = [
             "Aguardar 14 dias para ver se o corpo reabsorve sozinho"
         ],
         correta: 1
+    },
+    {
+        id: 51,
+        pergunta: "Qual é o principal fator responsável pelo envelhecimento extrínseco da pele?",
+        alternativas: [
+            "Genética hereditária",
+            "Radiação ultravioleta (UV)",
+            "Diminuição natural do colágeno tipo I",
+            "Alterações hormonais da menopausa"
+        ],
+        correta: 1
+    },
+    {
+        id: 52,
+        pergunta: "O que caracteriza a Técnica MD Codes™ na harmonização facial?",
+        alternativas: [
+            "Aplicação aleatória de preenchedor em toda face",
+            "Injeção em pontos anatômicos estratégicos para lifting global",
+            "Uso exclusivo de toxina botulínica nos lábios",
+            "Remoção cirúrgica das bolsas de Bichat"
+        ],
+        correta: 1
+    },
+    {
+        id: 53,
+        pergunta: "Qual o plano anatômico mais seguro para aplicação de preenchedores com microcânula?",
+        alternativas: [
+            "Intradérmico superficial",
+            "Subcutâneo ou suprapeiósteo",
+            "Intramuscular profundo",
+            "Intraósseo"
+        ],
+        correta: 1
+    },
+    {
+        id: 54,
+        pergunta: "O envelhecimento do terço inferior da face está relacionado principalmente à:",
+        alternativas: [
+            "Reabsorção do osso mandibular e perda do ângulo goníaco",
+            "Aumento do volume das glândulas salivares",
+            "Hipertrofia do músculo bucinador",
+            "Crescimento contínuo dos dentes"
+        ],
+        correta: 0
+    },
+    {
+        id: 55,
+        pergunta: "Qual é a função dos fios espiculados de PDO?",
+        alternativas: [
+            "Preenchimento imediato de rugas profundas",
+            "Tração mecânica e sustentação tecidual",
+            "Clareamento da pele superficial",
+            "Anestesia local prolongada"
+        ],
+        correta: 1
+    },
+    {
+        id: 56,
+        pergunta: "O 'Baby Botox' é uma técnica que se caracteriza por:",
+        alternativas: [
+            "Aplicação de doses máximas para paralisia total",
+            "Microdoses superficiais para efeito natural sem paralisia completa",
+            "Injeção exclusiva no músculo masseter",
+            "Uso de botox vencido para economizar produto"
+        ],
+        correta: 1
+    },
+    {
+        id: 57,
+        pergunta: "Qual estrutura vascular é considerada de alto risco durante o preenchimento temporal?",
+        alternativas: [
+            "Artéria Facial",
+            "Artéria Temporal Superficial",
+            "Veia Jugular Interna",
+            "Artéria Carótida Comum"
+        ],
+        correta: 1
+    },
+    {
+        id: 58,
+        pergunta: "O Fenômeno de Koebner na harmonização facial refere-se a:",
+        alternativas: [
+            "Melhora espontânea de cicatrizes após preenchimento",
+            "Formação de queloides ou cicatrizes hipertróficas no local da injeção",
+            "Anestesia imediata da hemiface",
+            "Rejuvenescimento acelerado pela toxina botulínica"
+        ],
+        correta: 1
+    },
+    {
+        id: 59,
+        pergunta: "Qual a vantagem principal do Ácido Hialurônico de cadeia longa (alto peso molecular)?",
+        alternativas: [
+            "Maior capacidade de sustentação e lifting",
+            "Absorção mais rápida pelo organismo",
+            "Menor custo de produção",
+            "Efeito exclusivo em lábios finos"
+        ],
+        correta: 0
+    },
+    {
+        id: 60,
+        pergunta: "O preenchimento do queixo (mentoplastia não cirúrgica) visa principalmente:",
+        alternativas: [
+            "Reduzir o tamanho do nariz",
+            "Melhorar a projeção e o perfil facial",
+            "Clarear os dentes inferiores",
+            "Aumentar a abertura das pálpebras"
+        ],
+        correta: 1
+    },
+    {
+        id: 61,
+        pergunta: "Qual é o músculo responsável pela formação das 'linhas de marionete'?",
+        alternativas: [
+            "Músculo Zigomático Maior",
+            "Músculo Depressor do Ângulo da Boca (DAO)",
+            "Músculo Orbicular dos Olhos",
+            "Músculo Temporal"
+        ],
+        correta: 1
+    },
+    {
+        id: 62,
+        pergunta: "A Síndrome de Nicolau é uma complicação rara caracterizada por:",
+        alternativas: [
+            "Aumento exagerado do volume labial",
+            "Necrose tecidual por embolização intravascular acidental",
+            "Paralisia facial bilateral permanente",
+            "Hipersensibilidade ao ácido hialurônico"
+        ],
+        correta: 1
+    },
+    {
+        id: 63,
+        pergunta: "O que são os 'Pontos de Boulos' na anatomia facial?",
+        alternativas: [
+            "Marcas de nascença na região zigomática",
+            "Forames de saída dos nervos supraorbital, infraorbital e mentoniano",
+            "Áreas de maior acúmulo de gordura facial",
+            "Pontos de inserção dos fios de sustentação"
+        ],
+        correta: 1
+    },
+    {
+        id: 64,
+        pergunta: "Qual a principal indicação do preenchedor à base de Policaprolactona (Ellansé)?",
+        alternativas: [
+            "Tratamento de rugas finas superficiais",
+            "Estímulo de colágeno tipo I com efeito duradouro",
+            "Paralisia muscular temporária",
+            "Clareamento de manchas senis"
+        ],
+        correta: 1
+    },
+    {
+        id: 65,
+        pergunta: "O 'Jawline Contouring' não cirúrgico é realizado com:",
+        alternativas: [
+            "Toxina botulínica no músculo frontal",
+            "Preenchedores de alta densidade na linha da mandíbula",
+            "Laser de CO2 fracionado",
+            "Peeling de ácido retinóico"
+        ],
+        correta: 1
+    },
+    {
+        id: 66,
+        pergunta: "Qual é a função do músculo Platisma no envelhecimento cervical?",
+        alternativas: [
+            "Sustentar a coluna cervical",
+            "Formar bandas verticais e contribuir para flacidez do pescoço",
+            "Elevar o osso hioide",
+            "Proteger a artéria carótida"
+        ],
+        correta: 1
+    },
+    {
+        id: 67,
+        pergunta: "A Técnica de Sanduíche (Sandwich Technique) para lábios consiste em:",
+        alternativas: [
+            "Usar apenas um tipo de preenchedor no vermelhão seco",
+            "Combinar preenchedor de alta e baixa densidade em diferentes planos",
+            "Injetar toxina botulínica antes do preenchedor",
+            "Aplicar gelo entre as camadas de produto"
+        ],
+        correta: 1
+    },
+    {
+        id: 68,
+        pergunta: "O 'Fox Eyes' é uma tendência estética que visa:",
+        alternativas: [
+            "Arredondar o formato dos olhos",
+            "Elevar a cauda da sobrancelha criando olhar amendoado",
+            "Aumentar o volume das pálpebras superiores",
+            "Reduzir o tamanho dos olhos"
+        ],
+        correta: 1
+    },
+    {
+        id: 69,
+        pergunta: "Qual é o principal vaso sanguíneo que irriga a região nasal e oferece risco na rinomodelação?",
+        alternativas: [
+            "Artéria Facial e seu ramo Angular",
+            "Artéria Temporal Média",
+            "Veia Retromandibular",
+            "Artéria Occipital"
+        ],
+        correta: 0
+    },
+    {
+        id: 70,
+        pergunta: "O edema periorbital após preenchimento de olheiras é mais comum quando:",
+        alternativas: [
+            "O produto é injetado profundamente no osso zigomático",
+            "Há injeção muito superficial ou excesso de produto na pálpebra inferior",
+            "Utiliza-se toxina botulínica na região frontal",
+            "O paciente dorme de bruços após o procedimento"
+        ],
+        correta: 1
+    },
+    {
+        id: 71,
+        pergunta: "A Técnica de 'Full Face' com Ácido Hialurônico preconiza:",
+        alternativas: [
+            "Tratar apenas uma região isolada por sessão",
+            "Harmonizar todos os terços da face de forma integrada",
+            "Usar apenas toxina botulínica em toda face",
+            "Realizar procedimentos apenas no inverno"
+        ],
+        correta: 1
+    },
+    {
+        id: 72,
+        pergunta: "O músculo Corrugador do Supercílio é responsável por qual expressão facial?",
+        alternativas: [
+            "Sorriso amplo",
+            "Franzir as sobrancelhas (expressão de preocupação)",
+            "Piscar os olhos",
+            "Elevar as bochechas"
+        ],
+        correta: 1
+    },
+    {
+        id: 73,
+        pergunta: "Qual a profundidade ideal para aplicação de toxina botulínica no músculo frontal?",
+        alternativas: [
+            "Intradérmica superficial (0,5mm)",
+            "Intramuscular (aplicação no ventre do músculo)",
+            "Suprapeióstea (tocando o osso)",
+            "Subcutânea profunda apenas"
+        ],
+        correta: 1
+    },
+    {
+        id: 74,
+        pergunta: "O preenchimento labial com técnica de 'Boca Russa' caracteriza-se por:",
+        alternativas: [
+            "Aumento exagerado e artificial dos lábios",
+            "Formato achatado com projeção horizontal e pouca altura vertical",
+            "Lábios extremamente finos e delineados",
+            "Injeção apenas no lábio inferior"
+        ],
+        correta: 1
+    },
+    {
+        id: 75,
+        pergunta: "Qual é o tempo de duração médio dos fios de PDO lisos?",
+        alternativas: [
+            "1 a 2 semanas",
+            "6 a 8 meses",
+            "2 a 3 anos",
+            "Permanente"
+        ],
+        correta: 1
+    },
+    {
+        id: 76,
+        pergunta: "A 'Toxina Botulínica' é produzida por qual bactéria?",
+        alternativas: [
+            "Staphylococcus aureus",
+            "Clostridium botulinum",
+            "Streptococcus pyogenes",
+            "Escherichia coli"
+        ],
+        correta: 1
+    },
+    {
+        id: 77,
+        pergunta: "O que é o 'Microbotox' ou 'Mesobotox'?",
+        alternativas: [
+            "Toxina diluída em grandes volumes aplicada superficialmente para melhorar textura e poros",
+            "Toxina concentrada para paralisia profunda",
+            "Substituto sintético da toxina botulínica",
+            "Toxina vencida reaproveitada"
+        ],
+        correta: 0
+    },
+    {
+        id: 78,
+        pergunta: "O Ângulo de Terzis é formado pela intersecção de quais estruturas faciais?",
+        alternativas: [
+            "Nariz e lábio superior",
+            "Linha da mandíbula e pescoço",
+            "Sobrancelha e pálpebra superior",
+            "Lábio inferior e mento"
+        ],
+        correta: 1
+    },
+    {
+        id: 79,
+        pergunta: "Qual é o tratamento de primeira escolha para o sorriso gengival severo com mais de 4mm de exposição?",
+        alternativas: [
+            "Preenchimento labial com ácido hialurônico",
+            "Toxina botulínica + cirurgia de aumento de coroa clínica",
+            "Clareamento dental caseiro",
+            "Aparelho ortodôntico fixo"
+        ],
+        correta: 1
+    },
+    {
+        id: 80,
+        pergunta: "O músculo Prócero está localizado na região:",
+        alternativas: [
+            "Do queixo",
+            "Da raiz do nariz (entre as sobrancelhas)",
+            "Das bochechas",
+            "Do pescoço"
+        ],
+        correta: 1
+    },
+    {
+        id: 81,
+        pergunta: "As manchas senis (lentigos solares) são melhor tratadas com:",
+        alternativas: [
+            "Preenchedores de ácido hialurônico",
+            "Luz Intensa Pulsada (LIP) ou Laser Q-Switched",
+            "Toxina botulínica tipo A",
+            "Fios de sustentação de PDO"
+        ],
+        correta: 1
+    },
+    {
+        id: 82,
+        pergunta: "Qual estrutura anatômica define o 'Arco Zigomático'?",
+        alternativas: [
+            "Osso da mandíbula",
+            "Osso que forma a proeminência da maçã do rosto",
+            "Osso frontal da testa",
+            "Osso nasal"
+        ],
+        correta: 1
+    },
+    {
+        id: 83,
+        pergunta: "O que é o 'Volume Effect' ou Efeito Volumizador na HOF?",
+        alternativas: [
+            "Emagrecimento facial por toxina botulínica",
+            "Restauração dos volumes perdidos com o envelhecimento",
+            "Redução do tamanho dos lábios",
+            "Afinamento do nariz com preenchedores"
+        ],
+        correta: 1
+    },
+    {
+        id: 84,
+        pergunta: "A gordura submentoniana (papada) é metabolicamente resistente a dietas e exercícios porque:",
+        alternativas: [
+            "É composta apenas por água",
+            "Possui alta densidade de receptores alfa-2 adrenérgicos",
+            "Não tem vascularização sanguínea",
+            "É formada exclusivamente por músculo estriado"
+        ],
+        correta: 1
+    },
+    {
+        id: 85,
+        pergunta: "Qual é a principal vantagem do Laser de CO2 Fracionado no rejuvenescimento?",
+        alternativas: [
+            "Aumento do volume labial imediato",
+            "Remodelação do colágeno com menor tempo de recuperação",
+            "Paralisia dos músculos da expressão",
+            "Substituição do osso perdido"
+        ],
+        correta: 1
+    },
+    {
+        id: 86,
+        pergunta: "O tratamento com Sculptra (Ácido Poli-L-Láctico) requer:",
+        alternativas: [
+            "Aplicação em dose única e resultado imediato definitivo",
+            "Múltiplas sessões com efeito progressivo ao longo de meses",
+            "Injeção intraóssea para estimular medula",
+            "Uso diário de antibióticos por 6 meses"
+        ],
+        correta: 1
+    },
+    {
+        id: 87,
+        pergunta: "A região temporal é considerada de alto risco devido à presença da:",
+        alternativas: [
+            "Artéria Facial profunda",
+            "Artéria Temporal Superficial e veia sentinela",
+            "Glândula parótida superficial",
+            "Artéria subclávia"
+        ],
+        correta: 1
+    },
+    {
+        id: 88,
+        pergunta: "O que caracteriza o 'Ponto G' estético no preenchimento labial?",
+        alternativas: [
+            "Ponto de injeção no centro do lábio inferior",
+            "Projeção das colunas do philtrum no lábio superior",
+            "Área de maior sensibilidade do lábio",
+            "Ponto de anestesia do nervo infraorbital"
+        ],
+        correta: 1
+    },
+    {
+        id: 89,
+        pergunta: "O peeling de Ácido Tricloroacético (ATA) em concentração média (25-35%) atinge qual camada?",
+        alternativas: [
+            "Apenas a epiderme superficial",
+            "Derme papilar e reticular superficial",
+            "Gordura subcutânea",
+            "Periósteo facial"
+        ],
+        correta: 1
+    },
+    {
+        id: 90,
+        pergunta: "A técnica de Biofotônica aplicada à estética utiliza:",
+        alternativas: [
+            "Radiofrequência monopolar exclusivamente",
+            "LEDs e lasers de baixa potência para biomodulação celular",
+            "Ultrassom de alta intensidade para destruição de gordura",
+            "Micro-ondas para aquecimento tecidual"
+        ],
+        correta: 1
+    },
+    {
+        id: 91,
+        pergunta: "Qual é o antagonista específico para reverter os efeitos da Toxina Botulínica?",
+        alternativas: [
+            "Hialuronidase 2000UI",
+            "Antitoxina botulínica equina (não há antagonista clínico rotineiro)",
+            "Vitamina K injetável",
+            "Adrenalina 1:1000"
+        ],
+        correta: 1
+    },
+    {
+        id: 92,
+        pergunta: "O 'V-Y Plasty' ou Técnica V-Y com preenchedores visa:",
+        alternativas: [
+            "Fechamento de feridas cirúrgicas",
+            "Criar definição e projeção no lábio superior",
+            "Remover tatuagens dos lábios",
+            "Anestesiar a região do mento"
+        ],
+        correta: 1
+    },
+    {
+        id: 93,
+        pergunta: "O ligamento de McGregor na anatomia facial está localizado na região:",
+        alternativas: [
+            "Malar (zigomática)",
+            "Mandibular",
+            "Frontal",
+            "Nasal"
+        ],
+        correta: 0
+    },
+    {
+        id: 94,
+        pergunta: "Qual complicação pode ocorrer com injeção intra-arterial de toxina botulínica?",
+        alternativas: [
+            "Paralisia flácida muscular local apenas",
+            "Embolização distal com risco de AVC e necrose tecidual",
+            "Aumento da força muscular imediata",
+            "Crescimento ósseo acelerado"
+        ],
+        correta: 1
+    },
+    {
+        id: 95,
+        pergunta: "O fenômeno de 'Cross-Linking' no Ácido Hialurônico refere-se a:",
+        alternativas: [
+            "Ligações químicas entre as cadeias do polímero para aumentar durabilidade",
+            "Mistura de diferentes marcas de preenchedor",
+            "Aplicação cruzada dos fios de PDO",
+            "Técnica de injeção em formato de X"
+        ],
+        correta: 0
+    },
+    {
+        id: 96,
+        pergunta: "O preenchimento das 'Linhas de Marionete' é realizado no:",
+        alternativas: [
+            "Sulco nasojugal (olheiras)",
+            "Sulco mentolabial (do canto da boca ao queixo)",
+            "Sulco nasogeniano (bigode chinês)",
+            "Região glabelar (entre sobrancelhas)"
+        ],
+        correta: 1
+    },
+    {
+        id: 97,
+        pergunta: "Qual dos seguintes NÃO é um preenchedor temporário?",
+        alternativas: [
+            "Ácido Hialurônico",
+            "Hidroxiapatita de Cálcio",
+            "Polimetilmetacrilato (PMMA)",
+            "Ácido Poli-L-Láctico"
+        ],
+        correta: 2
+    },
+    {
+        id: 98,
+        pergunta: "A anestesia do nervo mentoniano bloqueia a sensibilidade de qual região?",
+        alternativas: [
+            "Pálpebra superior",
+            "Lábio inferior e mento",
+            "Bochecha e asa do nariz",
+            "Língua e palato"
+        ],
+        correta: 1
+    },
+    {
+        id: 99,
+        pergunta: "O ultrassom microfocado (Ultherapy) atua na camada:",
+        alternativas: [
+            "Epiderme (camada mais superficial da pele)",
+            "SMAS (Sistema Músculo Aponeurótico Superficial)",
+            "Dentina dos dentes",
+            "Cartilagem nasal"
+        ],
+        correta: 1
+    },
+    {
+        id: 100,
+        pergunta: "O princípio da 'Beleza Fracionada' em HOF moderna preconiza:",
+        alternativas: [
+            "Tratar todos os pacientes com a mesma técnica padronizada",
+            "Respeitar a individualidade anatômica e proporções naturais de cada rosto",
+            "Dividir o rosto em 10 partes iguais para injeção",
+            "Fracionar o pagamento em múltiplas parcelas"
+        ],
+        correta: 1
     }
+
 ];
