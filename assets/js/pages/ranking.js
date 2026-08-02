@@ -1,6 +1,10 @@
+// // kys
+
 // import { buscarRankingCompletoHoje } from "../services/pontuacaoService.js";
 
-// document.addEventListener("DOMContentLoaded", async () => {
+// document.addEventListener("DOMContentLoaded", carregarRanking);
+
+// async function carregarRanking() {
 
 //     const container = document.getElementById("ranking");
 
@@ -8,32 +12,109 @@
 
 //         const ranking = await buscarRankingCompletoHoje();
 
-//         container.innerHTML = ranking.map((participante, index) => `
+//         if (!ranking || ranking.length === 0) {
 
-//             <div class="linha-ranking">
+//             container.innerHTML = `
+//                 <div class="hero">
+//                     <h2>Nenhum participante encontrado.</h2>
+//                     <p class="descricao">
+//                         Ainda não existem resultados para hoje.
+//                     </p>
+//                 </div>
+//             `;
 
-//                 <span>${index + 1}º</span>
+//             return;
+//         }
 
-//                 <span>${participante.nome}</span>
+//         const podio = ranking.slice(0, 3);
+//         const restantes = ranking.slice(3);
 
-//                 <span>${participante.acertos} acertos</span>
+//         container.innerHTML = `
 
-//                 <span>${participante.tempo_total}s</span>
+//             <div class="podio">
+
+//                 ${podio.map((participante, index) => `
+
+//                     <div class="podio-card ${index === 0 ? "primeiro" : ""}">
+
+//                         <div class="posicao">
+//                             ${
+//                                 index === 0
+//                                     ? "🥇"
+//                                     : index === 1
+//                                     ? "🥈"
+//                                     : "🥉"
+//                             }
+//                         </div>
+
+//                         <div class="nome">
+//                             ${participante.nome}
+//                         </div>
+
+//                         <div class="acertos">
+//                             ${participante.acertos} acertos
+//                         </div>
+
+//                         <div class="tempo">
+//                             ${participante.tempo_total}s
+//                         </div>
+
+//                     </div>
+
+//                 `).join("")}
 
 //             </div>
 
-//         `).join("");
+//             <div class="lista-ranking">
+
+//                 ${restantes.map((participante, index) => `
+
+//                     <div class="card-ranking">
+
+//                         <div class="col">
+
+//                             <div class="posicao-lista">
+//                                 ${index + 4}
+//                             </div>
+
+//                             <div>
+
+//                                 <div class="nome-lista">
+//                                     ${participante.nome}
+//                                 </div>
+
+//                                 <div class="info">
+//                                     ${participante.acertos} acertos • ${participante.tempo_total}s
+//                                 </div>
+
+//                             </div>
+
+//                         </div>
+
+//                     </div>
+
+//                 `).join("")}
+
+//             </div>
+
+//         `;
 
 //     } catch (erro) {
 
-//         console.error(erro);
+//         console.error("Erro ao carregar ranking:", erro);
 
-//         container.innerHTML = "<p>Erro ao carregar o ranking.</p>";
+//         container.innerHTML = `
+//             <div class="hero">
+//                 <h2>Erro ao carregar o ranking.</h2>
+//                 <p class="descricao">
+//                     Tente novamente em alguns instantes.
+//                 </p>
+//             </div>
+//         `;
 
 //     }
 
-// });7
-
+// }
 
 import { buscarRankingCompletoHoje } from "../services/pontuacaoService.js";
 
@@ -47,38 +128,71 @@ async function carregarRanking() {
 
         const ranking = await buscarRankingCompletoHoje();
 
+        const usuarioAtual = JSON.parse(
+            sessionStorage.getItem("usuario")
+        );
+
         if (!ranking || ranking.length === 0) {
 
             container.innerHTML = `
                 <div class="hero">
                     <h2>Nenhum participante encontrado.</h2>
-                    <p class="descricao">
-                        Ainda não existem resultados para hoje.
-                    </p>
                 </div>
             `;
 
             return;
         }
 
-        const podio = ranking.slice(0, 3);
+        const minhaPosicao = ranking.findIndex(
+            participante => participante.id === usuarioAtual.id
+        );
+
+        const podio = ranking.slice(0,3);
         const restantes = ranking.slice(3);
 
         container.innerHTML = `
 
+            <div class="minha-posicao">
+
+                <span class="texto-posicao">
+                    Sua posição hoje
+                </span>
+
+                <div class="card-minha-posicao">
+
+                    <div class="numero-posicao">
+                        #${minhaPosicao + 1}
+                    </div>
+
+                    <div>
+
+                        <div class="nome-lista">
+                            ${usuarioAtual.nome}
+                        </div>
+
+                        <div class="info">
+                            ${usuarioAtual.acertos} acertos • ${usuarioAtual.tempo_total}s
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
             <div class="podio">
 
-                ${podio.map((participante, index) => `
+                ${podio.map((participante,index)=>`
 
-                    <div class="podio-card ${index === 0 ? "primeiro" : ""}">
+                    <div class="podio-card ${participante.id===usuarioAtual.id ? "usuario-atual":""} ${index===0 ? "primeiro":""}">
 
                         <div class="posicao">
                             ${
-                                index === 0
-                                    ? "🥇"
-                                    : index === 1
-                                    ? "🥈"
-                                    : "🥉"
+                                index===0
+                                ? "🥇"
+                                : index===1
+                                ? "🥈"
+                                : "🥉"
                             }
                         </div>
 
@@ -102,14 +216,14 @@ async function carregarRanking() {
 
             <div class="lista-ranking">
 
-                ${restantes.map((participante, index) => `
+                ${restantes.map((participante,index)=>`
 
-                    <div class="card-ranking">
+                    <div class="card-ranking ${participante.id===usuarioAtual.id ? "usuario-atual":""}">
 
                         <div class="col">
 
                             <div class="posicao-lista">
-                                ${index + 4}
+                                ${index+4}
                             </div>
 
                             <div>
@@ -136,14 +250,11 @@ async function carregarRanking() {
 
     } catch (erro) {
 
-        console.error("Erro ao carregar ranking:", erro);
+        console.error(erro);
 
         container.innerHTML = `
             <div class="hero">
-                <h2>Erro ao carregar o ranking.</h2>
-                <p class="descricao">
-                    Tente novamente em alguns instantes.
-                </p>
+                <h2>Erro ao carregar ranking.</h2>
             </div>
         `;
 
