@@ -1,10 +1,15 @@
-// import  { criarUsuario } from "../services/usuarioService.js";
+
+// import {
+//     criarUsuario,
+//     buscarParticipanteHoje
+// } from "../services/usuarioService.js";
+
 // import { salvarUsuario } from "../services/authService.js";
+// // import { enviarEmail } from "../services/emailService.js";
+// import { enviarEmail } from "../services/emailService.js";
 
+// console.log("JS carregado");
 
-// console.log('js carregado');
-
- 
 // document.addEventListener("DOMContentLoaded", () => {
 
 //     console.log("DOM carregado");
@@ -13,84 +18,139 @@
 
 //     console.log(form);
 
+//     form.addEventListener("submit", handleSubmit);
+
 // });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const form = document.getElementById("cadastroForm");
-//     form.addEventListener("submit", handleSubmit);
-// })
-
 // async function handleSubmit(event) {
-//     event.preventDefault();
 
-//     // const nome = document.getElementById("nome").value.trim();
+//     event.preventDefault();
 
 //     const nome = limpezaNome(
 //         document.getElementById("nome").value
 //     );
 
-//     const email = document.
-//                 getElementById("email")
-//                 .value
-//                 .trim()
-//                 .toLowerCase();
-
+//     const email = document
+//         .getElementById("email")
+//         .value
+//         .trim()
+//         .toLowerCase();
 
 //     const telefone = limpezaTelefone(
-//                     document.getElementById("telefone").value
+//         document.getElementById("telefone").value
 //     );
 
-//     if (!validarFormulario(nome,email,telefone)){
+//     if (!validarFormulario(nome, email, telefone)) {
 //         return;
 //     }
 
 //     const usuario = {
-
 //         nome,
 //         email,
-//         telefone,
-//         // dataCadastro : new Date().toISOString().slice(0, 16)
+//         telefone
 //     };
 
-//     console.log("Usuário: ", usuario)
+//     console.log("Usuário:", usuario);
 
 //     try {
+
+//         // Verifica se já respondeu hoje
+//         const participanteExistente =
+//             await buscarParticipanteHoje(email, telefone);
+
+//         if (participanteExistente) {
+
+//             console.log("Participante já respondeu hoje.");
+
+//             salvarUsuario(participanteExistente);
+
+//             window.location.href = "resultado.html";
+
+//             return;
+
+//         }
+//         try {
+
+//             const participanteExistente =
+//                 await buscarParticipanteHoje(email, telefone);
         
-//         const usuarioCriado = await criarUsuario(usuario)
+//             if (participanteExistente) {
+        
+//                 console.log("Participante já respondeu hoje.");
+        
+//                 salvarUsuario(participanteExistente);
+        
+//                 window.location.href = "resultado.html";
+        
+//                 return;
+//             }
+        
+//             const usuarioCriado = await criarUsuario(usuario);
+        
+//             console.log("Participante criado:", usuarioCriado);
+        
+//             // ENVIA O E-MAIL COM O LINK
+//             await enviarEmail(usuarioCriado);
+        
+//             alert(
+//                 "Cadastro realizado com sucesso! Verifique seu e-mail para acessar o quiz."
+//             );
+        
+//         } catch (erro) {
+        
+//             console.error(erro);
+        
+//             alert("Erro ao cadastrar participante.");
+        
+//         }
 
-//         console.log(usuarioCriado);
+//         // Cria um novo participante
+//         const usuarioCriado = await criarUsuario(usuario);
 
-//         salvarUsuario(usuarioCriado);
+//         console.log("Participante criado:", usuarioCriado);
 
-//         window.location.href = "instruçõesQuiz.html";
+//         // Próximo passo:
+//         // await enviarEmail(usuarioCriado);
+
+//         // Enquanto o EmailJS não estiver implementado,
+//         // apenas exibimos o link que será enviado.
+
+//         console.log(
+//             `Link de acesso:
+//             ${window.location.origin}/login.html?token=${usuarioCriado.token_login}`
+//         );
+
+//         alert(
+//             "Cadastro realizado!\n\n" +
+//             "Na próxima etapa este link será enviado por e-mail.\n\n" +
+//             "Por enquanto ele foi exibido no Console (F12)."
+//         );
+
+//         window.location.href = "emailEnviado.html";
 
 //     } catch (erro) {
-        
-        
 
 //         console.error("Erro completo:", erro);
 //         console.error("Código:", erro.code);
 //         console.error("Mensagem:", erro.message);
 //         console.error("Detalhes:", erro.details);
 //         console.error("Hint:", erro.hint);
-    
+
 //         alert("Erro ao cadastrar participante.");
+
 //     }
 
-
-
-
 // }
 
+// function validarEmail(email) {
 
-
-// function validarEmail(email){
 //     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 //     return regex.test(email);
+
 // }
 
-// function validarFormulario(nome, email, telefone){
-
+// function validarFormulario(nome, email, telefone) {
 
 //     const regexNome = /^[A-Za-zÀ-ÿ\s]+$/;
 
@@ -99,17 +159,23 @@
 //         alert("O nome possui caracteres inválidos.");
 
 //         return false;
+
 //     }
 
+//     if (nome.length < 3 || nome.length > 80) {
 
-//     if (nome.length < 3 || nome.length > 80){
-//         alert('O nome deve conter entre 3 e 80 caractéres');
+//         alert("O nome deve conter entre 3 e 80 caracteres.");
+
 //         return false;
+
 //     }
 
-//     if (!validarEmail(email)){
-//         alert('informe um email válido');
+//     if (!validarEmail(email)) {
+
+//         alert("Informe um e-mail válido.");
+
 //         return false;
+
 //     }
 
 //     if (email.length > 100) {
@@ -117,30 +183,41 @@
 //         alert("E-mail muito grande.");
 
 //         return false;
+
 //     }
-    
-//     if (telefone.length < 8 || telefone.length > 13){
-//         alert('informe um telefone válido');
+
+//     if (telefone.length < 8 || telefone.length > 13) {
+
+//         alert("Informe um telefone válido.");
+
 //         return false;
+
 //     }
 
 //     return true;
+
 // }
 
-// function limpezaNome(nome){
-//     return nome.trim().replace(/\s+/g," ")
+// function limpezaNome(nome) {
+
+//     return nome
+//         .trim()
+//         .replace(/\s+/g, " ");
+
 // }
 
-// function limpezaTelefone(telefone){
-//     return telefone.replace(/\D/g, "")
-// }
+// function limpezaTelefone(telefone) {
 
+//     return telefone.replace(/\D/g, "");
+
+// }
 import {
     criarUsuario,
     buscarParticipanteHoje
 } from "../services/usuarioService.js";
 
 import { salvarUsuario } from "../services/authService.js";
+import { enviarEmail } from "../services/emailService.js";
 
 console.log("JS carregado");
 
@@ -188,28 +265,27 @@ async function handleSubmit(event) {
 
     try {
 
-        
         const participanteExistente =
             await buscarParticipanteHoje(email, telefone);
 
         if (participanteExistente) {
 
             console.log("Participante já respondeu hoje.");
+
             salvarUsuario(participanteExistente);
-            
+
             window.location.href = "resultado.html";
 
             return;
         }
 
-
         const usuarioCriado = await criarUsuario(usuario);
 
         console.log("Participante criado:", usuarioCriado);
 
-        salvarUsuario(usuarioCriado);
+        await enviarEmail(usuarioCriado);
 
-        window.location.href = "instruçõesQuiz.html";
+        window.location.href = "login.html";
 
     } catch (erro) {
 
@@ -220,6 +296,8 @@ async function handleSubmit(event) {
         console.error("Hint:", erro.hint);
 
         alert("Erro ao cadastrar participante.");
+
+        
 
     }
 
