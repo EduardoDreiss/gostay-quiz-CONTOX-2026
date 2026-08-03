@@ -285,7 +285,7 @@ async function handleSubmit(event) {
 
         await enviarEmail(usuarioCriado);
 
-        window.location.href = "login.html";
+        window.location.href = "emailEnviado.html";
 
     } catch (erro) {
 
