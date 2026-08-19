@@ -25,11 +25,11 @@ export function obterUsuario() {
 
 }
 
-export function estaAutenticado() {
+// export function estaAutenticado() {
 
-    return sessionStorage.getItem("autenticado") === "true";
+//     return sessionStorage.getItem("autenticado") === "true";
 
-}
+// }
 
 export function definirEtapa(etapa) {
 
