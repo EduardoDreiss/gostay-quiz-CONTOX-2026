@@ -4,17 +4,17 @@ import {
 } from "../services/usuarioService.js";
 
 import { salvarUsuario } from "../services/authService.js";
-import { enviarEmail } from "../services/emailService.js";
 
 console.log("JS carregado");
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("DOM carregado");
-
     const form = document.getElementById("cadastroForm");
 
-    console.log(form);
+    if (!form) {
+        console.error("Formulário cadastroForm não encontrado.");
+        return;
+    }
 
     form.addEventListener("submit", handleSubmit);
 
@@ -52,6 +52,7 @@ async function handleSubmit(event) {
 
     try {
 
+        // Verifica se o participante já respondeu hoje
         const participanteExistente =
             await buscarParticipanteHoje(email, telefone);
 
@@ -66,25 +67,25 @@ async function handleSubmit(event) {
             return;
         }
 
+        // Cria novo participante
         const usuarioCriado = await criarUsuario(usuario);
 
         console.log("Participante criado:", usuarioCriado);
 
-        await enviarEmail(usuarioCriado);
+        // Salva o usuário para as próximas páginas
+        salvarUsuario(usuarioCriado);
 
+        // Vai diretamente para as instruções
         window.location.href = "instruçõesQuiz.html";
 
     } catch (erro) {
 
-        console.error("Erro completo:", erro);
-        console.error("Código:", erro.code);
-        console.error("Mensagem:", erro.message);
-        console.error("Detalhes:", erro.details);
-        console.error("Hint:", erro.hint);
+        console.error("Erro ao cadastrar participante:", erro);
 
-        alert("Erro ao cadastrar participante.");
-
-        
+        alert(
+            "Não foi possível realizar o cadastro. " +
+            "Tente novamente."
+        );
 
     }
 
@@ -107,15 +108,15 @@ function validarFormulario(nome, email, telefone) {
         alert("O nome possui caracteres inválidos.");
 
         return false;
-
     }
 
     if (nome.length < 3 || nome.length > 80) {
 
-        alert("O nome deve conter entre 3 e 80 caracteres.");
+        alert(
+            "O nome deve conter entre 3 e 80 caracteres."
+        );
 
         return false;
-
     }
 
     if (!validarEmail(email)) {
@@ -123,7 +124,6 @@ function validarFormulario(nome, email, telefone) {
         alert("Informe um e-mail válido.");
 
         return false;
-
     }
 
     if (email.length > 100) {
@@ -131,7 +131,6 @@ function validarFormulario(nome, email, telefone) {
         alert("E-mail muito grande.");
 
         return false;
-
     }
 
     if (telefone.length < 8 || telefone.length > 13) {
@@ -139,7 +138,6 @@ function validarFormulario(nome, email, telefone) {
         alert("Informe um telefone válido.");
 
         return false;
-
     }
 
     return true;

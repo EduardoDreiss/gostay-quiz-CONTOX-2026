@@ -1,30 +1,27 @@
-// kys
 import { supabase } from "../config/supabase.js";
 
 export async function criarUsuario(usuario) {
 
     console.log("Enviando para o Supabase:", usuario);
 
-    const token = crypto.randomUUID();
-
     const { data, error } = await supabase
         .from("participantes")
         .insert({
             nome: usuario.nome,
             email: usuario.email,
-            telefone: usuario.telefone,
-            token_login: token
+            telefone: usuario.telefone
         })
         .select()
         .single();
 
     if (error) {
+        console.error("Erro ao criar usuário:", error);
         throw error;
     }
 
     return data;
-
 }
+
 
 export async function buscarUsuario(id) {
 
@@ -39,43 +36,14 @@ export async function buscarUsuario(id) {
     }
 
     return data;
-
 }
 
-export async function buscarUsuarioPorToken(token) {
-
-    const { data, error } = await supabase
-        .from("participantes")
-        .select("*")
-        .eq("token_login", token)
-        .single();
-
-    if (error) {
-        throw error;
-    }
-
-    return data;
-
-}
-
-export async function invalidarToken(id) {
-
-    const { error } = await supabase
-        .from("participantes")
-        .update({
-            token_login: null
-        })
-        .eq("id", id);
-
-    if (error) {
-        throw error;
-    }
-
-}
 
 export async function buscarParticipanteHoje(email, telefone) {
 
-    const hoje = new Date().toISOString().split("T")[0];
+    const hoje = new Date()
+        .toISOString()
+        .split("T")[0];
 
     const inicioDia = `${hoje}T00:00:00`;
     const fimDia = `${hoje}T23:59:59`;
@@ -83,7 +51,9 @@ export async function buscarParticipanteHoje(email, telefone) {
     const { data, error } = await supabase
         .from("participantes")
         .select("*")
-        .or(`email.eq.${email},telefone.eq.${telefone}`)
+        .or(
+            `email.eq.${email},telefone.eq.${telefone}`
+        )
         .gte("data_cadastro", inicioDia)
         .lt("data_cadastro", fimDia)
         .maybeSingle();
@@ -93,41 +63,4 @@ export async function buscarParticipanteHoje(email, telefone) {
     }
 
     return data;
-
-}
-
-// export async function buscarUsuarioPorToken(token) {
-
-//     const { data, error } = await supabase
-//         .from("participantes")
-//         .select("*")
-//         .eq("token_login", token)
-//         .single();
-
-//     if (error) {
-//         throw error;
-//     }
-
-//     return data;
-
-// }
-
-export async function validarEmail(id) {
-
-    const { data, error } = await supabase
-        .from("participantes")
-        .update({
-            email_validado: true,
-            token_login: null
-        })
-        .eq("id", id)
-        .select()
-        .single();
-
-    if (error) {
-        throw error;
-    }
-
-    return data;
-
 }
