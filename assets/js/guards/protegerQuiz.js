@@ -6,12 +6,12 @@ import {
 
 export function protegerQuiz() {
 
-    if (!estaAutenticado()) {
+    // if (!estaAutenticado()) {
 
-        window.location.href = "/index.html";
-        return;
+    //     window.location.href = "/index.html";
+    //     return;
 
-    }
+    // }
 
     if (obterEtapa() !== "instrucoes") {
 
