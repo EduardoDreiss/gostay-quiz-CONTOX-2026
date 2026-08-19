@@ -3,7 +3,7 @@
 import { perguntas as todasAsPerguntas } from "../../data/questions.js";
 import { atualizarPontuacao } from "../services/pontuacaoService.js";
 
-protegerQuiz();
+// protegerQuiz();
 
 console.log("JS carregado");
 
