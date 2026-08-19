@@ -4,8 +4,289 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Gostay</title>
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/resultado.css">
+
+    <style>
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #f6f8fc;
+            --surface: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --border: #e2e8f0;
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #06b6d4;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .home {
+            flex: 1;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ========== LINK RANKING ========== */
+        .ranking-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 999px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+            margin-bottom: 2rem;
+        }
+
+        .ranking-link:hover {
+            border-color: var(--primary);
+            background: #eff6ff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 3rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .hero:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        #tituloResultado {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero a {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background 0.2s ease;
+        }
+
+        .hero a:hover {
+            background: #eff6ff;
+        }
+
+        /* ========== GRID DE CTAs ========== */
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        /* ========== ESTILO BASE DOS CARDS ========== */
+        .cta-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1.5rem;
+            padding: 2.5rem 2rem;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        .cta-card__eyebrow {
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-card__titulo {
+            margin: 0 0 0.75rem;
+            font-size: 1.75rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .cta-card__texto {
+            margin: 0 0 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .cta-card__seta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid transparent;
+            transition: gap 0.2s ease;
+        }
+
+        .cta-card:hover .cta-card__seta {
+            gap: 0.75rem;
+        }
+
+        /* ========== CTA SECUNDÁRIO ========== */
+        .cta-card--secondary {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            color: var(--text-primary);
+        }
+
+        .cta-card--secondary:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: #bfdbfe;
+        }
+
+        .cta-card--secondary .cta-card__eyebrow {
+            background: #dbeafe;
+            color: var(--primary-dark);
+        }
+
+        .cta-card--secondary .cta-card__titulo {
+            color: var(--text-primary);
+        }
+
+        .cta-card--secondary .cta-card__texto {
+            color: var(--text-secondary);
+        }
+
+        .cta-card--secondary .cta-card__seta {
+            color: var(--primary);
+            border-top-color: var(--border);
+        }
+
+        /* ========== CTA PRIMÁRIO (PLATAFORMA GOSTAY) ========== */
+        .cta-card--primary {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e40af 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px -12px rgba(30, 58, 138, 0.45);
+        }
+
+        .cta-card--primary::before {
+            background:
+                radial-gradient(circle at top right, rgba(6, 182, 212, 0.25), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.35), transparent 45%);
+            opacity: 0.8;
+        }
+
+        .cta-card--primary:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(30, 58, 138, 0.6);
+            border-color: rgba(103, 232, 249, 0.25);
+        }
+
+        .cta-card--primary .cta-card__eyebrow {
+            background: rgba(6, 182, 212, 0.15);
+            color: #67e8f9;
+            border: 1px solid rgba(103, 232, 249, 0.3);
+        }
+
+        .cta-card--primary .cta-card__titulo {
+            color: #ffffff;
+        }
+
+        .cta-card--primary .cta-card__texto {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .cta-card--primary .cta-card__seta {
+            color: #67e8f9;
+            border-top-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero {
+                padding: 2rem 1.25rem;
+            }
+        }
+    </style>
+
     <script 
         type="module"
         src="/assets/js/pages/resultado.js">
@@ -25,26 +306,31 @@
                 <a href="correcoes.html">Ver correções</a>
             </div>
 
-            <a href="paginaVideo.html" class="cta-plataforma">
-                <span class="cta-plataforma__eyebrow">Aula grátis</span>
-                <h2 class="cta-plataforma__titulo">Conheça nossas aulas</h2>
-                <p class="cta-plataforma__texto">
-                    Liberamos uma aula gratuita para você conhecer a plataforma e ver como ela pode te ajudar a crescer.
-                </p>
-                <span class="cta-plataforma__seta">Explorar a plataforma →</span>
-            </a>
+            <div class="cta-grid">
+                <!-- CTA SECUNDÁRIO -->
+                <a href="paginaVideo.html" class="cta-card cta-card--secondary">
+                    <span class="cta-card__eyebrow">Aula grátis</span>
+                    <h2 class="cta-card__titulo">Conheça nossas aulas</h2>
+                    <p class="cta-card__texto">
+                        Liberamos uma aula gratuita para você conhecer a plataforma e ver como ela pode te ajudar a crescer.
+                    </p>
+                    <span class="cta-card__seta">Explorar a plataforma →</span>
+                </a>
 
-            <a href="https://gostay.com.br/" class="cta-plataforma">
-                <span class="cta-plataforma__eyebrow">✨ depois do quiz</span>
-                <h2 class="cta-plataforma__titulo">Conheça o Gostay</h2>
-                <p class="cta-plataforma__texto">
-                    Veja como estamos transformando o aprendizado de clínicas de estética e odontologia.
-                </p>
-                <span class="cta-plataforma__seta">Explorar a plataforma →</span>
-            </a>
+                <!-- CTA PRIMÁRIO / PLATAFORMA -->
+                <a href="https://gostay.com.br/" class="cta-card cta-card--primary">
+                    <span class="cta-card__eyebrow">✨ depois do quiz</span>
+                    <h2 class="cta-card__titulo">Conheça o Gostay</h2>
+                    <p class="cta-card__texto">
+                        Veja como estamos transformando o aprendizado de clínicas de estética e odontologia.
+                    </p>
+                    <span class="cta-card__seta">Explorar a plataforma →</span>
+                </a>
+            </div>
 
         </div>
     </section>
+
     <footer>
         <p>by Gostay - 2026</p>
     </footer>
