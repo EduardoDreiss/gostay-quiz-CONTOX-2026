@@ -1,5 +1,5 @@
 // kys
-import { protegerQuiz } from "../guards/protegerQuiz.js";
+// import { protegerQuiz } from "../guards/protegerQuiz.js";
 import { perguntas as todasAsPerguntas } from "../../data/questions.js";
 import { atualizarPontuacao } from "../services/pontuacaoService.js";
 
