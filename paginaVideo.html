@@ -1,29 +1,132 @@
-<!-- kys -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Gostay</title>
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/resultado.css">
-    <script 
-        type="module"
-        src="/assets/js/pages/resultado.js">
-    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --primary: #6366f1;
+            --accent: #a855f7;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top left, #1e293b 0%, #0f172a 45%, #020617 100%);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px; /* mobile: menos respiro */
+        }
+
+        .home {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: var(--radius);
+            padding: 24px 16px; /* mobile: mais compacto */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem; /* mobile: menor */
+            font-weight: 700;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* proporção 16:9 */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.6);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Ajustes para tablets e desktops */
+        @media (min-width: 600px) {
+            body {
+                padding: 24px;
+            }
+
+            .container {
+                padding: 40px 32px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 32px;
+            }
+
+            .video-wrapper {
+                border-radius: 16px;
+            }
+        }
+
+        /* Telas grandes */
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+    <script type="module" src="/assets/js/pages/resultado.js"></script>
 </head>
 <body>
     <section class="home">
         <div class="container">
             <h1>Video Aula</h1>
 
-            <iframe
-                src="https://www.youtube.com/embed/_GjXzrJlG4I"
-                width="100%"
-                height="500"
-                allow="autoplay">
-            </iframe>
-
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/_GjXzrJlG4I"
+                    width="100%"
+                    height="500"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    title="Video Aula"
+                    loading="lazy">
+                </iframe>
+            </div>
         </div>
     </section>
 </body>
