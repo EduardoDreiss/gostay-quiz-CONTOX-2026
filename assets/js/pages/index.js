@@ -72,7 +72,7 @@ async function handleSubmit(event) {
 
         await enviarEmail(usuarioCriado);
 
-        window.location.href = "emailEnviado.html";
+        window.location.href = "instruçõesQuiz.html";
 
     } catch (erro) {
 
